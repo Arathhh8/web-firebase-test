@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Progreso Circular con Firebase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/2.0.1/progressbar.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/progressbar.js@1.0.1/dist/progressbar.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+    <h3>Cisterna 1</h3>
+    <div id="container" style="margin: 50px;"></div>
+    <h3>Cisterna 2</h3>
+    <div id="container2" style="margin: 50px;"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/2.0.1/progressbar.min.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCmeaaw2VUT49d7Abl4OYfXpQfQlqk8Oqc",
+            authDomain: "fir-tam-arduino.firebaseapp.com",
+            databaseURL: "https://fir-tam-arduino-default-rtdb.firebaseio.com",
+            projectId: "fir-tam-arduino",
+            storageBucket: "fir-tam-arduino.appspot.com",
+            messagingSenderId: "578061028938",
+            appId: "1:578061028938:web:ff62acaa1f9504019ae0b3"
+        };
+        
+        firebase.initializeApp(firebaseConfig);
+        var firebaseRef = firebase.database().ref("temperatureReal");
+        var bar = new ProgressBar.Circle("#container", {
+            color: "#aaa",
+            strokeWidth: 5,
+            trailWidth: 1,
+            duration: 1500,
+            text: {
+                value: "0"
+            },
+            step: function(state, bar) {
+                bar.setText((bar.value() * 100).toFixed(0));
+            }
+        });
+
+        firebaseRef.on("value", function(snapshot){
+            var data = snapshot.val();
+            snapshot.forEach(function(element){
+                bar.animate(element.val() / 100);
+            });
+        });
+
+        var firebaseRef2 = firebase.database().ref("SalaA");
+        var bar2 = new ProgressBar.Circle("#container2", {
+            color: "#aaa",
+            strokeWidth: 5,
+            trailWidth: 1,
+            duration: 1500,
+            text: {
+                value: "0"
+            },
+            step: function(state, bar2) {
+                bar2.setText((bar2.value() * 100).toFixed(0));
+            }
+        });
+
+        firebaseRef2.on("value", function(snapshot){
+            var data2 = snapshot.val();
+            snapshot.forEach(function(element){
+                bar2.animate(element.val() / 100);
+            });
+        });
+
+    </script>
+</body>
+
+</html>
