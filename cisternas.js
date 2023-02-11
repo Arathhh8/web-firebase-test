@@ -19,10 +19,11 @@ function createCircle(elementName) {
       trailWidth: 5,
       duration: 1500,
       text: {
-          value: "0"
+          value: "0",
       },
       step: function (state, bar) {
           bar.setText((bar.value() * 100).toFixed(0));
+          bar.text.style.fontSize = '4rem';
       }
   });
 
@@ -34,6 +35,7 @@ function createCircle(elementName) {
 createCircle("cisterna1");
 createCircle("cisterna2");
 createCircle("cisterna3");
+createCircle("cisterna4");
 
 
 // Include the navbar
