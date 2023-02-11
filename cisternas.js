@@ -14,21 +14,21 @@ var firebaseRef2 = firebase.database().ref("SalaA");
 function createCircle(elementName) {
   var containerId = "#container2_" + elementName;
   var bar = new ProgressBar.Circle(containerId, {
-      color: "blue",
-      strokeWidth: 5,
-      trailWidth: 5,
-      duration: 1500,
-      text: {
-          value: "0",
-      },
-      step: function (state, bar) {
-          bar.setText((bar.value() * 100).toFixed(0));
-          bar.text.style.fontSize = '4rem';
-      }
+    color: "blue",
+    strokeWidth: 5,
+    trailWidth: 5,
+    duration: 1500,
+    text: {
+      value: "0",
+    },
+    step: function (state, bar) {
+      bar.setText((bar.value() * 100).toFixed(0));
+      bar.text.style.fontSize = '4rem';
+    }
   });
 
   firebaseRef2.child(elementName).on("value", function (snapshot) {
-      bar.animate(snapshot.val() / 100);
+    bar.animate(snapshot.val() / 100);
   });
 }
 
@@ -48,3 +48,21 @@ function loadNavbar() {
 }
 
 document.addEventListener("DOMContentLoaded", loadNavbar);
+
+const fill = document.getElementById("fill");
+
+// Escuchar los cambios en la base de datos de Firebase
+firebase.database().ref("SalaA/cisterna1").on("value", function(snapshot) {
+  const data = snapshot.val();
+  
+  // Actualiza la altura del elemento de relleno en función de los datos recibidos de Firebase
+  fill.style.height = `${data}%`;
+});
+
+
+
+
+
+
+
+
