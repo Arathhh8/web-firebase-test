@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barra de Progreso Circular con Firebase</title>
+    <title>Cisternas TAM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/2.0.1/progressbar.min.css" />
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
@@ -20,36 +20,35 @@
     <!-- Include the navbar -->
     <div id="navbarContainer"></div>
 
-    <div id="container">
-        <div id="fill"></div>
-    </div>
-      
-
+    <h1>Sala A</h1>
 
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-3 p-5 p-md-4">
+            <div class="col-12 col-md-4 p-5 p-md-4">
                 <h4>Cisterna 1</h4>
-                <div id="container2_cisterna1" class="cisterna-container-md"></div>
+                <div id="container">
+                    <div id="fill1">
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-md-3 p-5 p-md-4">
+            <div class="col-12 col-md-4 p-5 p-md-4">
                 <h4>Cisterna 2</h4>
-                <div id="container2_cisterna2"></div>
+
+                <div id="container">
+                    <div id="fill2"></div>
+                </div>
             </div>
-            <div class="col-12s col-md-3 p-5 p-md-4">
-                <h4>Cisterna 3</h4>
-                <div id="container2_cisterna3"></div>
-            </div>
-            <div class="col-12s col-md-3 p-5 p-md-4">
-                <h4>Cisterna 4</h4>
-                <div id="container2_cisterna4"></div>
+            <div class="col-12s col-md-4 p-5 p-md-4 main-content">
+                <h4>Cisterna AT</h4>
+                <div id="container">
+                    <div id="fill3"></div>
+                </div>
             </div>
         </div>
     </div>
 
-
-
-
+    <!-- Include the navbar -->
+    <div id="footerContainer"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1/firebase.js"></script>
