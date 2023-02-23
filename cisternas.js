@@ -13,12 +13,14 @@ firebase.initializeApp(firebaseConfig);
 const fill = (elementId, firebasePath) => {
   firebase.database().ref(firebasePath).on("value", function(snapshot) {
     const data = snapshot.val();
+     valor_map = Math.round(map(data, 0, 230, 0, 100));
     const element = document.getElementById(elementId);
-    element.style.height = `${data}%`;
-    element.innerHTML = `<div class="fill-value"><h4>${data}%</h4></div>`;
+    element.style.height = `${valor_map}%`;
+    element.innerHTML = `<div class="fill-value"><h4>${valor_map}%</h4><h5>${Math.round((data/100) * 3.3 * 3.75)} m3</h5></div>`; //muestra valor mapeado en el contenedor de la cisterna
+    
     if (data < 20) {
       element.style.backgroundColor = "red";
-    }
+    } 
     else{
       element.style.backgroundColor = "rgb(53, 172, 228)";
     }
@@ -49,6 +51,10 @@ function loadFooter() {
     .then(data => {
       document.querySelector("#footerContainer").innerHTML = data;
     });
+}
+
+function map(valor, rango_original_min, rango_original_max, rango_destino_min, rango_destino_max) {
+  return ((valor - rango_original_min) / (rango_original_max - rango_original_min)) * (rango_destino_max - rango_destino_min) + rango_destino_min;
 }
 
 
