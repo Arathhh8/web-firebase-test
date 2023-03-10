@@ -1,3 +1,14 @@
+// Include the cisternsA
+document.addEventListener("DOMContentLoaded", loadCisternsA);
+function loadCisternsA() {
+    fetch("./html/cisternsA/cisternsA.html")
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector("#cisternsAContainer").innerHTML = data;
+            initForm();
+        });
+}
+
 const fill = (elementId, firebasePath,cistern_long, cistern_width) => {
     firebase.database().ref(firebasePath).on("value", function(snapshot) {
       const data = snapshot.val();

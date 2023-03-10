@@ -10,24 +10,42 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/progressbar.js@1.0.1/dist/progressbar.min.js"></script>
-    <script src="./main.js" type="module"></script>
-    <link rel="stylesheet" href="./styles.css">
+    <script src="/src/main.js" type="module"></script>
+    <link rel="stylesheet" href="/src/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <!-- Include the navbar -->
-    <div id="navbarContainer"></div>
-
-    <!-- Include the userLogin -->
-    <div id="usersContainer" style="display: block;"></div>
-
-    <div id="cisternsAContainer" style="display: none;"></div>
-
-    <!-- Include the footer -->
-    <div id="footerContainer"></div>
+    <div class="container">
+        <h1>Sala A</h1>
+        <div class="row">
+            <div class="col-12 col-md-4 p-5 p-md-4">
+                <h4>Cisterna 1</h4>
+                <div id="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div id="fill1">
+                    </div>
+                </div>
+                <p style="text-align: center;">Capacidad máxima: 28.46m<sup>3</sup></p>
+            </div>
+            
+            <div class="col-12 col-md-4 p-5 p-md-4">
+                <h4>Cisterna 2</h4>
+                <div id="container">
+                    <div id="fill2"></div>
+                </div>
+                <p style="text-align: center;">Capacidad máxima: 89.00m<sup>3</sup></p>
+            </div>
+            <div class="col-12s col-md-4 p-5 p-md-4 main-content">
+                <h4>Cisterna AT</h4>
+                <div id="container">
+                    <div id="fill3"></div>
+                </div>
+                <p style="text-align: center;">Capacidad máxima: 43.70m<sup>3</sup></p>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1/firebase.js"></script>
