@@ -9,7 +9,7 @@ function loadCisternsA() {
         });
 }
 
-const fill = (elementId, firebasePath,cistern_long, cistern_width) => {
+export const fill = (elementId, firebasePath,cistern_long, cistern_width) => {
     firebase.database().ref(firebasePath).on("value", function(snapshot) {
       const data = snapshot.val();
       const valor_map = Math.round(map(data, 0, 230, 100, 0));
@@ -29,11 +29,6 @@ const fill = (elementId, firebasePath,cistern_long, cistern_width) => {
     });
   }
   
-  //    CSS, Ruta-Firebase ,cistern_long, cistern_width 
-  fill("fill1", "SalaA/cisterna1",3.3, 3.75);
-  fill("fill2", "SalaA/cisterna2",8.8, 4.4);
-  fill("fill3", "SalaA/cisterna3",3.8, 5);
-
   function map(valor, rango_original_min, rango_original_max, rango_destino_min, rango_destino_max) {
     return ((valor - rango_original_min) / (rango_original_max - rango_original_min)) * (rango_destino_max - rango_destino_min) + rango_destino_min;
   }
