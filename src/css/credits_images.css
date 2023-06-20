@@ -1,0 +1,14 @@
+.img-small {
+    max-height: 200px;
+    max-width: 300px;
+  }
+
+.card-img-top {
+    border-radius: 20%;
+    padding: 10px;
+  }
+  
+.card {
+    margin-bottom: 20px;
+  }
+  

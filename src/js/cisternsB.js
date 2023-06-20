@@ -1,18 +1,17 @@
-
 // Include the cisternsA
-document.addEventListener("DOMContentLoaded", loadCisternsA);
-function loadCisternsA() {
-  fetch("./html/cisternsA/cisternsA.html")
+document.addEventListener("DOMContentLoaded", loadCisternsB);
+function loadCisternsB() {
+  fetch("./html/cisternsA/cisternsB.html")
     .then(response => response.text())
     .then(data => {
-      document.querySelector("#cisternsAContainer").innerHTML = data;
+      document.querySelector("#cisternsBContainer").innerHTML = data;
       initForm();
     });
 }
 
 let lastValidValue = null;
 
-export const fill = (elementId, firebasePath, cistern_long, cistern_width) => {
+export const fillB = (elementId, firebasePath, cistern_long, cistern_width) => {
   firebase.database().ref(firebasePath).on("value", function (snapshot) {
     const data = snapshot.val();
     if (data === 0) { //Corrección a error del sensor, en caso de que envíe un 0, el dato se mantendrá como el anterior
@@ -46,8 +45,3 @@ export const fill = (elementId, firebasePath, cistern_long, cistern_width) => {
 function map(valor, rango_original_min, rango_original_max, rango_destino_min, rango_destino_max) {
   return ((valor - rango_original_min) / (rango_original_max - rango_original_min)) * (rango_destino_max - rango_destino_min) + rango_destino_min;
 }
-
-
-
-
-

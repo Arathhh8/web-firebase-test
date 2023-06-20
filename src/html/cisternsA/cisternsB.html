@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cisternas TAM</title>
+    <title>Cisternas Sala B</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/2.0.1/progressbar.min.css" />
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
@@ -19,34 +19,35 @@
 <body>
 
     <div class="container">
-        <h1>Sala A</h1>
-        <div class="row">
+        <h1 class="text-center">Sala B</h1>
+        <div class="row justify-content-center">
             <div class="col-12 col-md-4 p-5 p-md-4">
-                <h4>Cisterna 1</h4>
-                <div id="container"
-                    style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <div id="fill1">
+                <div class="d-flex justify-content-center align-items-center">
+                    <div>
+                        <h4>Cisterna 1</h4>
+                        <div id="container">
+                            <div id="fill4"></div>
+                        </div>
+                        <p class="text-center">Capacidad máxima: 28.46m<sup>3</sup></p>
                     </div>
                 </div>
-                <p style="text-align: center;">Capacidad máxima: 28.46m<sup>3</sup></p>
             </div>
-
+    
             <div class="col-12 col-md-4 p-5 p-md-4">
-                <h4>Cisterna 2</h4>
-                <div id="container">
-                    <div id="fill2"></div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div>
+                        <h4>Cisterna 2</h4>
+                        <div id="container">
+                            <div id="fill5"></div>
+                        </div>
+                        <p class="text-center">Capacidad máxima: 89.00m<sup>3</sup></p>
+                    </div>
                 </div>
-                <p style="text-align: center;">Capacidad máxima: 89.00m<sup>3</sup></p>
-            </div>
-            <div class="col-12s col-md-4 p-5 p-md-4 main-content">
-                <h4>Cisterna AT</h4>
-                <div id="container">
-                    <div id="fill3"></div>
-                </div>
-                <p style="text-align: center;">Capacidad máxima: 43.70m<sup>3</sup></p>
             </div>
         </div>
     </div>
+    
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1/firebase.js"></script>
