@@ -6,8 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 firebase-debug.log*
 firebase-debug.*.log*
-src/js/firebase.js
-src/js/users.js
+#src/js/firebase.js
+#src/js/users.js
 
 # Firebase cache
 .firebase/
