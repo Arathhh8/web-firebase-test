@@ -92,8 +92,10 @@ auth.onAuthStateChanged(function (user) {
 
   } else {
     // El usuario no está autenticado, mostrar el formulario de inicio de sesión
+    document.getElementById('navbarContainer').style.display = 'block';
+    document.getElementById('footerContainer').style.display = 'block';
     document.getElementById('usersContainer').style.display = 'block';
-    document.getElementById('user-form').style.display = 'block';
+    //document.getElementById('user-form').style.display = 'block';
     document.getElementById('cisternsAContainer').style.display = 'none';
     document.getElementById('cisternsBContainer').style.display = 'none';
     document.getElementById('cisternsCContainer').style.display = 'none';
