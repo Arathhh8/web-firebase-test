@@ -1,6 +1,7 @@
 import { auth } from './firebase.js';
 import { fill } from './cisternsA.js';
 import { fillB } from './cisternsB.js';
+import { fillC } from './cisternsC.js';
 
 // Include the user-login
 document.addEventListener("DOMContentLoaded", loadUser);
@@ -89,6 +90,11 @@ auth.onAuthStateChanged(function (user) {
 
     fillB("fill4", "SalaB/cisterna_1B", 3.3, 3.75);
     fillB("fill5", "SalaB/cisterna_2B", 8.8, 4.4);
+
+
+    fillC("fill6", "Dispensador/Champu", 8.8, 4.4);
+    fillC("fill7", "Dispensador/Cloro", 8.8, 4.4);
+    fillC("fill8", "Dispensador/Jabon", 8.8, 4.4);
 
   } else {
     // El usuario no está autenticado, mostrar el formulario de inicio de sesión
